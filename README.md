@@ -42,3 +42,19 @@ jupyter notebook chinese_handwriting_classification.ipynb
 - **Images:** 15,000 × 64×64 grayscale
 - **Classes:** 15 Chinese numerals (零、一、二、...、十五)
 - **Writers:** 100 individuals (150 samples each)
+
+## Environment
+
+Developed and tested with:
+
+- Python 3.9+
+- Jupyter Notebook / JupyterLab
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt      # if provided
+# or manually: pip install numpy pandas matplotlib scikit-learn torch torchvision
+```
+
+Open notebooks in order — each notebook builds on outputs from the previous one.
