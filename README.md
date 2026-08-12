@@ -26,7 +26,7 @@ Chinese MNIST contains 15,000 images of handwritten Chinese numerals (零 to 拾
 ```
 cv-chinese-handwriting-classification/
 ├── chinese_handwriting_classification.ipynb            # Classification notebook
-└── chinese_mnist.csv     # Dataset (pixel values + labels) (not committed — download separately, see Dataset section)
+└── chinese_mnist.csv     # Labels only — included in repo. Character images are NOT included, see Dataset section
 ```
 
 ## How to Run
@@ -43,7 +43,9 @@ jupyter notebook chinese_handwriting_classification.ipynb
 - **Classes:** 15 Chinese numerals (零、一、二、...、十五)
 - **Writers:** 100 individuals (150 samples each)
 
-`chinese_mnist.csv` is not committed to this repository (third-party dataset, kept out of version control). Download it from the source above and place it at the repo root as `chinese_mnist.csv` before running the notebook.
+`chinese_mnist.csv` is included in this repository as-is. Credit for the data belongs to the source above; see it for the original license and citation terms.
+
+**This repo is not fully self-contained.** `chinese_mnist.csv` holds only the `suite_id`/`sample_id`/`code`/`value`/`character` label metadata (one row per sample) — it does not contain pixel data. The actual 15,000 handwritten-character images (64×64 grayscale JPEGs, named `input_<suite_id>_<sample_id>_<code>.jpg`) are a separate image directory that ships alongside `chinese_mnist.csv` in the original Kaggle dataset and is **not** included here. To run the notebook end-to-end you must download the full dataset from the source above and place the image folder locally (matching the path the notebook expects) — the CSV alone is not enough to reproduce the pixel-loading steps.
 
 ## Environment
 
