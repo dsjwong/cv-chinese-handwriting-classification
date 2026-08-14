@@ -62,6 +62,17 @@ cv-chinese-handwriting-classification/
 
 Important: the notebook actually reads `Chinese_MINST_Dataset/chinese_mnist.csv` and per-sample images from `Chinese_MINST_Dataset/data/data/input_<suite_id>_<sample_id>_<code>.jpg` — a folder that is **not** present in this repository. The `chinese_mnist.csv` file at the repo root is a separate, unused, empty placeholder (0 non-zero bytes). To run the notebook, download the [Chinese MNIST dataset](https://www.kaggle.com/datasets/gpreda/chinese-mnist) and place it under `Chinese_MINST_Dataset/` with that same layout.
 
+## Dataset
+
+- **Source:** Chinese MNIST (Kaggle: https://www.kaggle.com/datasets/gpreda/chinese-mnist)
+- **Images:** 15,000 × 64×64 grayscale
+- **Classes:** 15 Chinese numerals (零、一、二、...、十五)
+- **Writers:** 100 individuals (150 samples each)
+
+`chinese_mnist.csv` is included in this repository as-is. Credit for the data belongs to the source above; see it for the original license and citation terms.
+
+**This repo is not fully self-contained.** `chinese_mnist.csv` holds only the `suite_id`/`sample_id`/`code`/`value`/`character` label metadata (one row per sample) — it does not contain pixel data. The actual 15,000 handwritten-character images (64×64 grayscale JPEGs, named `input_<suite_id>_<sample_id>_<code>.jpg`) are a separate image directory that ships alongside `chinese_mnist.csv` in the original Kaggle dataset and is **not** included here. To run the notebook end-to-end you must download the full dataset from the source above and place the image folder locally (matching the path the notebook expects) — the CSV alone is not enough to reproduce the pixel-loading steps.
+
 ## How to Run
 
 ```bash
